@@ -1,0 +1,613 @@
+{
+	"info": {
+		"_postman_id": "728fa207-9646-44a7-9962-46482d63b1a2",
+		"name": "Model Binding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FromHeader",
+			"item": [
+				{
+					"name": "Style A",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "test1",
+								"value": "foo",
+								"type": "text"
+							},
+							{
+								"key": "Test-Header",
+								"value": "bar",
+								"type": "text"
+							},
+							{
+								"key": "test3",
+								"value": "baz",
+								"type": "text"
+							},
+							{
+								"key": "test3",
+								"value": "ball",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/test/HeaderA",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"HeaderA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Style B",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "test1",
+								"type": "text",
+								"value": "foo"
+							},
+							{
+								"key": "test2",
+								"type": "text",
+								"value": "bar"
+							},
+							{
+								"key": "test3",
+								"type": "text",
+								"value": "baz"
+							},
+							{
+								"key": "test3",
+								"type": "text",
+								"value": "ball"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/test/HeaderB",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"HeaderB"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Style C",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "test1",
+								"type": "text",
+								"value": "foo"
+							},
+							{
+								"key": "Test-Header",
+								"type": "text",
+								"value": "bar"
+							},
+							{
+								"key": "test3",
+								"type": "text",
+								"value": "baz"
+							},
+							{
+								"key": "test3",
+								"type": "text",
+								"value": "ball"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/test/HeaderC",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"HeaderC"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FromQuery",
+			"item": [
+				{
+					"name": "Style A",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/test/QueryA?test1=foo&test-query=bar&test3=baz&test3=ball",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"QueryA"
+							],
+							"query": [
+								{
+									"key": "test1",
+									"value": "foo"
+								},
+								{
+									"key": "test-query",
+									"value": "bar"
+								},
+								{
+									"key": "test3",
+									"value": "baz"
+								},
+								{
+									"key": "test3",
+									"value": "ball"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Style B",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/test/QueryB?test1=foo&test2=bar&test3=baz&test3=ball",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"QueryB"
+							],
+							"query": [
+								{
+									"key": "test1",
+									"value": "foo"
+								},
+								{
+									"key": "test2",
+									"value": "bar"
+								},
+								{
+									"key": "test3",
+									"value": "baz"
+								},
+								{
+									"key": "test3",
+									"value": "ball"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Style C",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/test/QueryC?test1=foo&test-query=bar&test3=baz&test3=ball",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"QueryC"
+							],
+							"query": [
+								{
+									"key": "test1",
+									"value": "foo"
+								},
+								{
+									"key": "test-query",
+									"value": "bar"
+								},
+								{
+									"key": "test3",
+									"value": "baz"
+								},
+								{
+									"key": "test3",
+									"value": "ball"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FromForm",
+			"item": [
+				{
+					"name": "Style A",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "test1",
+									"value": "foo",
+									"type": "text"
+								},
+								{
+									"key": "Test-Form",
+									"value": "bar",
+									"type": "text"
+								},
+								{
+									"key": "test3",
+									"value": "baz",
+									"type": "text"
+								},
+								{
+									"key": "test3",
+									"value": "ball",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/test/FormA",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"FormA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Style B",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "test1",
+									"value": "foo",
+									"type": "text"
+								},
+								{
+									"key": "test2",
+									"value": "bar",
+									"type": "text"
+								},
+								{
+									"key": "test3",
+									"value": "baz",
+									"type": "text"
+								},
+								{
+									"key": "test3",
+									"value": "ball",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/test/FormB",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"FormB"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Style C",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "test1",
+									"value": "foo",
+									"type": "text"
+								},
+								{
+									"key": "Test-Form",
+									"value": "bar",
+									"type": "text"
+								},
+								{
+									"key": "test3",
+									"value": "baz",
+									"type": "text"
+								},
+								{
+									"key": "test3",
+									"value": "ball",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/test/FormC",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"FormC"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FromRoute",
+			"item": [
+				{
+					"name": "Style A Option 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/test/RouteA1/123",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"RouteA1",
+								"123"
+							]
+						},
+						"description": "Remove \"123\" from the route. It should return 404/Not Found."
+					},
+					"response": []
+				},
+				{
+					"name": "Style A Option 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/test/RouteA2/123",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"RouteA2",
+								"123"
+							]
+						},
+						"description": "Remove \"123\" from the route. It should return a 204/No Content."
+					},
+					"response": []
+				},
+				{
+					"name": "Style A Option 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/test/RouteA3/123",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"RouteA3",
+								"123"
+							]
+						},
+						"description": "Remove \"123\" from the route. It should return \"ABC\" in the body."
+					},
+					"response": []
+				},
+				{
+					"name": "Style B Option 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/test/RouteB1/123",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"RouteB1",
+								"123"
+							]
+						},
+						"description": "Remove \"123\" from the route. It should return 404/Not Found."
+					},
+					"response": []
+				},
+				{
+					"name": "Style C Option 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/test/RouteC1/123",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"RouteC1",
+								"123"
+							]
+						},
+						"description": "Remove \"123\" from the route. It should return 404/Not Found."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FromBody",
+			"item": [
+				{
+					"name": "Style A",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"a\":{\n\t\t\"b\":{\n\t\t\t\"c\":{\n\t\t\t\t\"d\":{\n\t\t\t\t\t\"e\":1,\n\t\t\t\t\t\"f\":true,\n\t\t\t\t\t\"g\":null\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/test/BodyA",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"BodyA"
+							]
+						},
+						"description": "Put literally any valid JSON in the body. Since the binding on this method is object (JsonElement) it will accept any valid JSON.\n\nSwitch the content type to something other than JSON (e.g., XML) and it should return 415/Unsupported Media Type."
+					},
+					"response": []
+				},
+				{
+					"name": "Style B",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"a\":{\n\t\t\"b\":{\n\t\t\t\"c\":{\n\t\t\t\t\"d\":{\n\t\t\t\t\t\"e\":1,\n\t\t\t\t\t\"f\":true,\n\t\t\t\t\t\"g\":null\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/test/BodyA",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"test",
+								"BodyA"
+							]
+						},
+						"description": "Change the data type of test1, test2, or test3 in the payload and the request will return 204/No Content. (Schema doesn't match = return default object = return null)\n\nAdditional properties are okay, as long as they don't conflict with existing properties. They will just be ignored. (There may be a way to catch all other properties not defined in the class)"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
