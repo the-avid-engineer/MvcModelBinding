@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 
 namespace MvcModelBinding.Controllers
 {
@@ -7,7 +8,7 @@ namespace MvcModelBinding.Controllers
     // As far as MVC is concerned, an explicitly undecorated controller method parameter is implicitly decorated with [FromBody]
     // There can only be a single [FromBody] parameter; [FromHeader], [FromQuery], [FromForm], and [FromRoute] bindings are ignored on the [FromBody] parameter
     // [ApiController] (short for [ApiControllerAttribute]) adds behavior, such as automatically returning (405/Bad Request) if any of the model binding is invalid
-    [ApiController]
+    //[ApiController]
 
     // For [Controller]
     // As far as MVC is concerened, there are no implicit decorations and I'm unaware of it making any assumptions about your controller method parameters.
@@ -69,7 +70,15 @@ namespace MvcModelBinding.Controllers
 
         #region Style A (Always Works)
 
+        /// <summary>
+        /// Endpoint Info Goes Here
+        /// </summary>
+        /// <param name="test1">Parameter Info for test1 Goes Here</param>
+        /// <param name="test2">Parameter Info for test2 Goes Here</param>
+        /// <param name="test3">Parameter Info for test3 Goes Here</param>
+        /// <returns>Return Info Goes Here</returns>
         [HttpGet("HeaderA")]
+        [ProducesResponseType(typeof(UndecoratedModel), (int)HttpStatusCode.OK)]
         public IActionResult Header
         (
             [FromHeader] string test1,
@@ -77,11 +86,11 @@ namespace MvcModelBinding.Controllers
             [FromHeader] string[] test3
         )
         {
-            return Ok(new
+            return Ok(new UndecoratedModel
             {
-                test1,
-                test2,
-                test3,
+                test1 = test1,
+                test2 = test2,
+                test3 = test3,
             });
         }
 
